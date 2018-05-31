@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "preallocate-device-post.json",
+  "properties": {
+    "query": {
+      "properties": {
+        "match": {
+          "$ref": "#/definitions/match"
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
+        }
+      },
+      "required": [
+        "match",
+        "limit"
+      ]
+    }
+  },
+  "required": [
+    "query"
+  ],
+  "definitions": {
+    "match": {
+      "properties": {
+        "offeringId": {
+          "type": "string"
+        },
+          "datacenterId": {
+            "type": "integer"
+          },
+          "aggrZone": {
+            "type": "string"
+          }
+      },
+      "required": [
+        "offeringId"
+      ]
+    }
+  }
+}

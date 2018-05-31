@@ -1,0 +1,33 @@
+[{
+  "provider":{
+    "href": "mercury/device/123123123",
+    "name":"MERCURY",
+    "id": 123123123
+  },
+  "type": "SERVER",
+  "macAddress": "d4-ae-52-86-d8-95",
+  "comment": "Adding new server to inventory",
+  "location": {
+    "aggrZone": "IAD3:Public:Zone403-11",
+    "datacenterId":12,
+    "datacenter": "IAD3",
+    "cabinetName":"MX11",
+    "cabinetStartingSpace": 20
+  },
+  "product": {
+    "productCatalogDetails": {
+      "href": "productCatalogLink",
+      "id": 123,
+      "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+    },
+    "offerServiceDetails": {
+      "href": "offerlink",
+      "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+      "productName": "48GB Dual Processor Hex Core Dedicated Server"
+    }
+  },
+  "deviceState": {
+    "state": "PRODUCTION",
+    "comment": "Prod comment"
+  }
+}]

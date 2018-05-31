@@ -1,0 +1,320 @@
+[
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "ALLOCATED",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "device": {
+        "deviceService": {
+          "href": "deviceServiceLink",
+          "id": "12312312312"
+        },
+        "core": {
+          "href": "core.rackspace.com/device/12312312312",
+          "id": "12312312312"
+        }
+      },
+      "account": {
+        "links": {
+          "account": "accountlink",
+          "device": "devicelink"
+        },
+        "accountId": 612345,
+        "deviceId": 572341
+      },
+      "quote": {
+        "href": ".../quotes/9898989",
+        "id": "9898989",
+        "salesPersonUserId": "jim1234",
+        "opportunity": "9898989898"
+      },
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  },
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "AVAILABLE",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  },
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "MAINTENANCE",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  },
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "SUSPENDED",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  },
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "DECOMMISSIONED",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  },
+  {
+    "id": "530ab29ebcae151ade6f9b2f",
+    "type": "SERVER",
+    "macAddress": "d4-ae-52-86-d8-95",
+    "comment": "Comment from latest modification",
+    "deleted": false,
+    "location": {
+      "aggrZone": "IAD3:Public:Zone403-11",
+      "datacenterId":12,
+      "datacenter": "IAD3",
+      "cabinet":"MX11",
+      "cabinetStartingSpace": 20
+    },
+    "product": {
+      "productCatalogDetails": {
+        "href": "productCatalogLink",
+        "id": 123,
+        "offeringDescription": "48GB Dual Processor Hex Core Dedicated Server"
+      },
+      "offerServiceDetails": {
+        "href": "offerlink",
+        "productId": "902e1779-1356-4a95-85fa-b50001ef874c",
+        "productName": "48GB Dual Processor Hex Core Dedicated Server"
+      }
+    },
+    "inventoryState": {
+      "state": "DELETED",
+      "userId": "automation",
+      "comment": "TEST",
+      "timestamp": "1/1/1111T11:11:11Z",
+      "automationEvent": {
+        "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+        "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+      }
+    },
+    "deviceState": {
+      "state": "PRODUCTION",
+      "comment": "Prod comment",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "lastModified": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    },
+    "created": {
+      "userId": "bob",
+      "timestamp": "1/1/1111T11:11:11Z"
+    }
+  }
+]

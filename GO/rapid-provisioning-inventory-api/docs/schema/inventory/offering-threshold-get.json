@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "offering-threshold-get.json",
+  "properties":{
+    "offering":{"$ref":"#/definitions/offering"},
+    "datacenterThresholds":{
+      "type":"array",
+      "items":{
+      "$ref":"#/definitions/datacenterThresholds"}
+
+    }
+  },
+  "definitions": {
+    "offering": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "offeringId": {
+          "type": "integer"
+        }
+      }
+    },
+    "datacenterThresholds": {
+      "properties": {
+        "datacetnerId":{
+          "type": "integer"
+        },
+        "datacenterAbbreviation":{
+          "type": "string"
+        },
+        "warning": {
+          "type": "integer"
+        },
+        "critical": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

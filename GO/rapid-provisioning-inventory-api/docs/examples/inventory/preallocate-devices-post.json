@@ -1,0 +1,32 @@
+[
+  {
+    "query":{
+      "match":{
+        "offeringId":"111",
+        "datacenter":12,
+        "aggrZone":"DFW:Public:Zone400-01"
+      },
+      "limit":1
+    }
+  },
+  {
+    "query":{
+      "match":{
+        "offeringId":"222",
+        "datacenter":12,
+        "aggrZone":"DFW:Public:Zone400-01"
+      },
+      "limit":3
+    }
+  },
+  {
+    "query":{
+      "match":{
+        "offeringId":"333",
+        "datacenterId":12,
+        "aggrZone":"DFW:Public:Zone400-01"
+      },
+      "limit":1
+    }
+  }
+]

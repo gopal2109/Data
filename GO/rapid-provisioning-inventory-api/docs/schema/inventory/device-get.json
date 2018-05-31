@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "provider":{
+      "properties":{
+        "href":{"type":"string"},
+        "name":{"enum":["MERCURY"]},
+        "id":{"type":"integer"}
+      }
+    },
+    "type": {
+      "enum": [
+        "SERVER",
+        "FIREWALL"
+      ]
+    },
+    "macAddress": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "deleted": {
+      "type": "boolean"
+    },
+    "location": {
+      "$ref": "#/definitions/location"
+    },
+    "product": { "$ref": "#/definitions/product" },
+    "inventoryState": {
+      "type": "object",
+      "oneOf": [{
+        "$ref": "#/definitions/inventoryStateNew"
+      },{
+        "$ref": "#/definitions/inventoryStateGeneral"
+      }, {
+        "$ref": "#/definitions/inventoryStateAllocated"
+      }]
+    },
+    "deviceState": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": ["TEST", "PRE-PRODUCTION", "PRODUCTION"]
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        }
+      }
+    },
+    "lastModified": {
+      "$ref": "#/definitions/modification"
+    },
+    "created": {
+      "$ref": "#/definitions/modification"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "macAddress",
+    "comment",
+    "deleted",
+    "location",
+    "product",
+    "inventoryState",
+    "deviceState"
+  ],
+  "definitions": {
+    "modification": {
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      }
+    },
+    "automationEvent": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "eventId": {
+          "type": "string"
+        }
+      }
+    },
+    "location": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "aggrZone": {
+          "type": "string"
+        },
+        "datacenterId":{
+          "type":"integer"
+        },
+        "datacenter": {
+          "type": "string"
+        },
+        "cabinetName":{
+          "type":"string"
+        },
+        "cabinetStartingSpace": {
+          "type": "integer"
+        }
+      }
+    },
+    "product": {
+      "properties": {
+        "productCatalog": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "offeringDescription": {
+              "type": "string"
+            }
+          }
+        },
+        "offerService": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "productId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "quote": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "salesPersonUserId": {
+          "type": "string"
+        },
+        "opportunity": {
+          "type": "string"
+        }
+      }
+    },
+    "device": {
+      "properties": {
+        "deviceService": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "account": {
+      "properties": {
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "inventoryStateNew": {
+      "properties": {
+        "state": {
+          "enum": ["NEW"]
+        },
+        "provider": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "name": {
+              "enum": ["MERCURY"]
+            },
+            "id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "href",
+            "name",
+            "id"
+          ]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "state",
+        "userId",
+        "comment"
+      ]
+    },
+    "inventoryStateGeneral": {
+      "properties": {
+        "state": {
+          "enum": ["AVAILABLE", "MAINTENANCE", "SUSPENDED", "DECOMMISSIONED", "DELETED"]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "userId",
+        "comment",
+        "automationEvent"
+      ]
+    },
+    "inventoryStateAllocated": {
+      "properties": {
+        "state": {
+          "enum": ["ALLOCATED"]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "device": {
+          "$ref": "#/definitions/device"
+        },
+        "account": {
+          "$ref": "#/definitions/account"
+        },
+        "quote": {
+          "$ref": "#/definitions/quote"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "userId",
+        "comment",
+        "device",
+        "account"
+      ]
+    }
+  }
+}

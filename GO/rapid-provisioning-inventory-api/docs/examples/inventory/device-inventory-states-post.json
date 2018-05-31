@@ -1,0 +1,8 @@
+{
+  "state": "DECOMMISSIONED",
+  "comment": "Starting Decom in the Rack process for this device.",
+  "automationEvent": {
+    "href": ".../events/45bd38cb-f401-4873-a7a5-d5afa2fcc0cd",
+    "eventId": "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+  }
+}

@@ -1,0 +1,31 @@
+package backend
+
+import (
+	"os"
+	"io"
+	"rpis/config"
+	"github.com/Sirupsen/logrus"
+)
+
+var (
+	level string
+	Log logrus.Logger
+)
+
+func init() {
+	var fileout os.File
+	Log = logrus.New()
+	
+	if config.Conf.Logging.File != "" {
+		fileout = os.OpenFile(
+			config.Conf.Logging.File,
+			os.O_RDWR | os.O_APPEND,
+			0666)
+	} else {
+		fileout = os.Stderr
+	}
+			
+	Log.Out = fileout		
+}	
+
+	

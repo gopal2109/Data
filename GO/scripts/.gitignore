@@ -1,0 +1,16 @@
+i# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+
+.idea/.name
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/scripts.iml
+
+.idea/vcs.xml
+
+.idea/workspace.xml

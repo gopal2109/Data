@@ -1,0 +1,22 @@
+{
+  "offering": {
+    "href": "product/catalog/offering/111",
+    "offeringId": 111
+  },
+  "datacenterThresholds": [{
+    "datacenterId": 12,
+    "datacenterAbbreviation": "DFW3",
+    "warning": 100,
+    "critical": 45
+  }, {
+    "datacenterId": 13,
+    "datacenterAbbreviation": "IAD3",
+    "warning": 75,
+    "critical": 30
+  }, {
+    "datacenterId": 17,
+    "datacenterAbbreviation": "LON5",
+    "warning": 60,
+    "critical": 50
+  }]
+}

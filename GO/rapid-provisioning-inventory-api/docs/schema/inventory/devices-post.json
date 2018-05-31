@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "devices-post.json",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/device"
+  },
+  "definitions": {
+    "device": {
+      "properties": {
+        "provider": {
+          "$ref": "#/definitions/provider"
+        },
+        "type": {
+          "type": "string"
+        },
+        "macAddress": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/location"
+        },
+        "product": {
+          "$ref": "#/definitions/product"
+        },
+        "deviceState": {
+          "$ref": "#/definitions/deviceState"
+        }
+      },
+      "required": [
+        "provider",
+        "type",
+        "macAddress",
+        "comment",
+        "location",
+        "product",
+        "deviceState"
+      ]
+    },
+    "provider": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "name": {
+          "enum": ["MERCURY"]
+        },
+        "id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "href",
+        "name",
+        "id"
+      ]
+    },
+    "location": {
+      "properties": {
+        "aggrZone": {
+          "type": "string"
+        },
+        "datacenterId":{
+          "type":"integer"
+        },
+        "datacenter": {
+          "type": "string"
+        },
+        "cabinetName": {
+          "type": "string"
+        },
+        "cabinetStartingSpace": {
+          "type": "integer"
+        }
+      }
+    },
+    "product": {
+      "properties": {
+        "productCatalogDetails": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "offeringDescription": {
+              "type": "string"
+            }
+          }
+        },
+        "offerServiceDetails": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "productId": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "deviceState": {
+      "properties": {
+        "state": {
+          "enum": ["TEST", "PRE-PRODUCTION", "PRODUCTION"]
+        },
+        "comment": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

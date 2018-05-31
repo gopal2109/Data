@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "summary-get.json",
+  "type": "array",
+  "items": [{
+    "$ref": "#/definitions/offeringAvailabilitySummary"
+  }],
+  "definitions": {
+    "offeringAvailabilitySummary": {
+      "properties": {
+        "offering": {
+          "$ref": "#/definitions/offering"
+        },
+        "totalAvailable": {
+          "type": "integer"
+        },
+        "datacenters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/datacenter"
+          }
+        }
+      }
+    },
+    "offering": {
+      "properties": {
+        "offeringId": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer"
+        }
+      }
+    },
+    "datacenter": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "abbreviation": {
+          "type": "string"
+        },
+        "totalAvailable": {
+          "type": "integer"
+        },
+        "aggrZones": {
+          "type": "array",
+          "items": [{
+            "$ref": "#/definitions/aggrZone"
+          }]
+        },
+        "thresholds": {
+          "$ref": "#/definitions/thresholds"
+        }
+      }
+    },
+    "aggrZone": {
+      "properties": {
+        "zone": {
+          "type": "string"
+        },
+        "totalAvailable": {
+          "type": "integer"
+        }
+      }
+    },
+    "thresholds": {
+      "properties": {
+        "warning": {
+          "type": "integer"
+        },
+        "critical": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

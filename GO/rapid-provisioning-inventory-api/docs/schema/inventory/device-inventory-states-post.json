@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/inventory/device/inventory-states-get.json",
+
+  "oneOf": [{
+    "$ref": "#/definitions/inventoryStateGeneral"
+  }, {
+    "$ref": "#/definitions/inventoryStateAllocated"
+  }],
+  "definitions": {
+    "inventoryStateGeneral": {
+      "properties": {
+        "state": {
+          "enum": ["AVAILABLE", "MAINTENANCE", "SUSPENDED", "DECOMMISSIONED", "DELETED"]
+        },
+        "comment": {
+          "type": "string"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "comment",
+        "automationEvent"
+      ]
+    },
+    "inventoryStateAllocated": {
+      "properties": {
+        "state": {
+          "enum": ["ALLOCATED"]
+        },
+        "comment": {
+          "type": "string"
+        },
+        "device": {
+          "$ref": "#/definitions/device"
+        },
+        "account": {
+          "$ref": "#/definitions/account"
+        },
+        "quote": {
+          "$ref": "#/definitions/quote"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "comment",
+        "device",
+        "account"
+      ]
+    },
+    "quote": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "salesPersonUserId": {
+          "type": "string"
+        },
+        "opportunity": {
+          "type": "string"
+        }
+      }
+    },
+    "device": {
+      "properties": {
+        "deviceService": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "account": {
+      "properties": {
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "automationEvent": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "eventId": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+#%RAML 0.8
+---
+title: Rapid Provisioning Inventory
+documentation:
+  - title: API Overview
+    content: |
+      This API exposes methods to view and manage Rapid Provisioning inventory resources.
+  - title: Authentication and Authorization
+    content: |
+      <content pending>
+      Access to this API is granted through a valid token acquired through the Internal Identity service <pending link>.
+      The token is passed within the *X-Auth-Token* HTTP header.
+  - title: Standard errors
+    content: |
+      - **401**: Authentication error, the user does not have valid authentication details.
+      - **403**: Forbidden, you are not authorized to view this resource.
+      - **404**: The page requested does not exist.
+baseUri: https://inventory.provisioning.rax.io/api/{version}
+version: v1
+mediaType: application/json
+protocols: [ HTTPS ]
+
+securedBy: [internalIdentity]
+
+securitySchemes:
+  - internalIdentity: !include raml/identity-internal-security-scheme.raml
+
+/inventory:
+  displayName: Inventory
+  description: View and manage Rapid Provisioning inventory devices.
+  get:
+    displayName: Inventory Summary
+    description: |
+      Returns a list of datacenters with a summary of available inventory for sale.
+      Summary includes a list of product offering ID and quantity available for sale.
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/inventory/summary-get.json
+            schema: !include schema/inventory/summary-get.json
+
+
+  /devices:
+    get:
+      description: Returns a list of all devices in any state by default.
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/inventory/device-list-get.json
+              schema: !include schema/inventory/device-list-get.json
+
+    post:
+      displayName: Add devices
+      description: Add devices to inventory
+      body:
+        application/json:
+          example: !include examples/inventory/devices-post.json
+          schema: !include schema/inventory/devices-post.json
+      responses:
+        200:
+          headers:
+            rpi-device-href:
+              type: string
+          body:
+            application/json:
+              example: !include examples/inventory/devices-created.json
+              schema: !include schema/inventory/devices-created.json
+
+    /{deviceId}:
+      get:
+        description: A single inventory device
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include examples/inventory/device-get.json
+                schema: !include schema/inventory/device-get.json
+      put:
+        description: Update high level device details
+        body:
+          application/json:
+            example: !include examples/inventory/device-put.json
+            schema: !include schema/inventory/device-put.json
+        responses:
+          200:
+      delete:
+        description: Delete a device from inventory.
+        body:
+          application/json:
+            example: !include examples/inventory/device-delete.json
+            schema: !include schema/inventory/device-delete.json
+
+        responses:
+          200:
+            body:
+              text/plain: !!null
+          400:
+            body:
+              application/json:
+                example: !include examples/error.json
+                schema: !include schema/error.json
+
+      /inventory-states:
+        get:
+          description: |
+            A list containing the history of inventory states for the given device.
+            The items are sorted by timestamp with the latest state as item 0 by default.
+
+            PENDING: add query parameters to allow filtering of inventory states.
+          responses:
+            200:
+              body:
+                application/json:
+                  example: !include examples/inventory/device-inventory-states-get.json
+                  schema: !include schema/inventory/device-inventory-states-get.json
+
+        post:
+          description: Change the current inventory state for the given device
+          body:
+            application/json:
+              example: !include examples/inventory/device-inventory-states-post.json
+              schema: !include schema/inventory/device-inventory-states-post.json
+          responses:
+            200:
+
+  /pre-allocate-devices:
+    post:
+      description: |
+        Request to configure the inventoryState of a set of inventory devices which match the give criteria to PRE-ALLOCATED.
+        Matched devices will no longer be included in the Inventory Summary totals.
+      body:
+        application/json:
+          example: !include examples/inventory/preallocate-devices-post.json
+          schema: !include schema/inventory/preallocate-devices-post.json
+      responses:
+          200:
+            body:
+              application/json:
+                example: !include examples/inventory/preallocate-devices-post-200.json
+                schema: !include schema/inventory/preallocate-devices-post-200.json
+
+  /thresholds:
+    description: View and manage low and high thresholds for inventory levels
+    get:
+      description: Get the current thresholds values
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/inventory/summary-thresholds-get.json
+              schema: !include schema/inventory/summary-thresholds-get.json
+
+    /{offeringId}:
+      description: Manage inventory threshold levels for a given offeringId.
+      get:
+        description: Get the configured thresholds for a given offeringId.
+        responses:
+          200:
+            body:
+              application/json:
+                  example: !include examples/inventory/offering-threshold-get.json
+                  schema: !include schema/inventory/offering-threshold-get.json
+      put:
+        description: Update the threshold levels at each datacenter for a given offeringId.
+        body:
+            example: !include examples/inventory/offering-threshold-put.json
+            schema: !include schema/inventory/offering-threshold-put.json
+        responses:
+          200:
+
+/accounts:
+  displayName: Accounts
+  description: Manage account specific provisioning resources.
+
+  /{accountId}/devices:
+    post:
+      description: Request to allocate devices from available inventory, which match a set of criteria, to the given account.
+      body:
+        application/json:
+          example: !include examples/accounts/allocate-devices-post.json
+          schema: !include schema/accounts/allocate-devices-post.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/accounts/allocate-devices-post-200.json
+              schema: !include schema/accounts/allocate-devices-post-200.json
+
+    get:
+      description: Return the rapid provisioning devices allocated to the given account.
+
+  /{accountId}/valid-edge-devices:
+    displayName: Validated edge devices
+    get:
+        description: |
+          List of validated edge devices for a given hybrid account number.
+          The following is the curent validation logic to determine which deviecs are returned:
+            1. Core device is a Firewall with the Rapid Provisioning SKU.
+            2. DCX environment on the device shows only 1 segment.
+            3. Inventory is available in the same AggrZone of the device.
+
+          This information should be used to determine if inventory can be added to the specified Install Base account.
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include examples/accounts/valid-edge-devices-get.json
+                schema: !include schema/accounts/valid-edge-devices-get.json
+
+/providers:
+  displayName: Inventory providers
+  description: |
+    Inventory providers are low-level source systems which manange and maintain devices made available as provisioning inventory.
+    Devices can only be added to inventory by registered provider systems.
+  get:
+    description: List of registered inventory providers
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/providers/providers-get.json
+            schema: !include schema/providers/providers-get.json
+
+  post:
+    description: Register a new inventory provider.
+    body:
+        application/json:
+          example: !include examples/providers/providers-post.json
+          schema: !include schema/providers/providers-post.json
+    responses:
+      200:

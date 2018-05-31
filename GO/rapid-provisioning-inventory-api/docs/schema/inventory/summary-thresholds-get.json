@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "array",
+  "items": {
+    "$ref": "#/definitions/offeringThreshold"
+  },
+  "definitions": {
+    "offering": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "offeringId": {
+          "type": "integer"
+        }
+      }
+    },
+    "offeringThreshold": {
+      "properties": {
+        "offering": {
+          "$ref": "#/definitions/offering"
+        },
+        "datacenterThresholds": {
+          "$ref": "#/definitions/datacenterThresholds"
+        },
+        "high": {
+          "id": "high",
+          "type": "integer"
+        },
+        "low": {
+          "id": "low",
+          "type": "integer"
+        }
+      }
+    },
+    "datacenterThresholds": {
+      "properties": {
+        "DFW3": {
+          "$ref": "#/definitions/thresholds"
+        },
+        "IAD3": {
+          "$ref": "#/definitions/thresholds"
+        },
+        "LON5": {
+          "$ref": "#/definitions/thresholds"
+        },
+        "HKG1": {
+          "$ref": "#/definitions/thresholds"
+        },
+        "SYD1": {
+          "$ref": "#/definitions/thresholds"
+        }
+      }
+    },
+    "thresholds": {
+      "properties": {
+        "warning": {
+          "type": "integer"
+        },
+        "critical": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+}

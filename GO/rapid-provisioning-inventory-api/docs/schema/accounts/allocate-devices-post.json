@@ -1,0 +1,40 @@
+{
+"$schema": "http://json-schema.org/draft-04/schema#",
+"id": "account-allocate-request",
+"type": "object",
+"required": [
+"datacenter",
+"match"
+],
+"properties": {
+"datacenter": {
+"type": "string",
+"description": "The common abbreviation for the datacenter (e.g. DFW1) in which the devices should be matched."
+},
+"match": {
+"type": "array",
+"description": "List of objects containing the criteria to match and allocate to the given customer.",
+"items": {
+"properties": {
+"offeringId": {
+"type": "integer",
+"description": "The Product Catalog offering ID to match."
+},
+"offeringItemId": {
+"type": "string",
+"description": "If passed with an offeringId, the query will match against an offeringItemId. (e.g. for firewalls)"
+},
+"quantity": {
+"type": "integer",
+"description": "The number of devices to match for the given offeringId (and offeringItemId if provided)."
+}
+},
+"minItems": 1,
+"required": [
+"offeringId",
+"quantity"
+]
+}
+}
+}
+}

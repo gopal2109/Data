@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "device-put.json",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "macAddress": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "comment"
+  ]
+}

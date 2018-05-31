@@ -1,0 +1,14 @@
+{
+    "datacenter": "DFW1",
+    "match": [
+        {
+            "offeringId": 111,
+            "offeringItemId":"123",
+            "quantity": 1
+        },
+        {
+            "offeringId": 222,
+            "quantity": 3
+        }
+    ]
+}

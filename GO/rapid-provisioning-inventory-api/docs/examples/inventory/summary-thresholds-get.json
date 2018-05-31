@@ -1,0 +1,61 @@
+[{
+  "offering": {
+    "href": "product/catalog/offering/111",
+    "offeringId": 111
+  },
+  "datacenterThresholds": {
+    "DFW3": {
+      "warning": 60,
+      "critical": 50
+    },
+    "IAD3": {
+      "warning": 60,
+      "critical": 50
+    },
+    "LON5": {
+      "warning": 60,
+      "critical": 50
+    }
+  }
+},
+{
+  "offering": {
+    "href": "product/catalog/offering/222",
+    "offeringId": 222
+  },
+  "datacenterThresholds": {
+    "DFW3": {
+      "warning": 20,
+      "critical": 10
+    },
+    "IAD3": {
+      "warning": 100,
+      "critical": 50
+    },
+    "LON5": {
+      "warning": 60,
+      "critical": 50
+    }
+  }
+},
+{
+  "offering": {
+    "href": "product/catalog/offering/333",
+    "offeringId": 333
+  },
+  "datacenterThresholds": {
+    "DFW3": {
+      "warning": 200,
+      "critical": 120
+    },
+    "IAD3": {
+      "warning": 15,
+      "critical": 5
+    },
+    "LON5": {
+      "warning": 60,
+      "critical": 50
+    }
+  }
+}
+]

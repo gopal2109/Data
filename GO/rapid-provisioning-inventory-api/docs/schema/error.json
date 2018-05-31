@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "error.json",
+  "type": "object",
+  "properties": {
+    "message": {
+      "id": "message",
+      "type": "string"
+    }
+  }
+}

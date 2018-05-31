@@ -1,0 +1,2 @@
+cassandra-driver==2.7.2
+pymongo==2.7.2

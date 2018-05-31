@@ -1,0 +1,74 @@
+{
+	"_id" : ObjectId("57728690ba8d9829fbdd5303"),
+	"type" : "SERVER",
+	"deleted" : false,
+	"comment" : "Comment from latest modification"
+	"macAddress" : "d4-ae-52-86-d8-95",
+	"location" : {
+		"aggrZone" : "IAD3:Public:Zone403-11",
+		"cabinet" : "MX11",
+		"datacenter" : "IAD3",
+		"cabinetStartingSpace" : 20,
+		"datacenterId" : 12
+	},
+	"product" : {
+		"offerServiceDetails" : {
+			"productId" : "902e1779-1356-4a95-85fa-b50001ef874c",
+			"href" : "https://offerlink/......",
+			"productName" : "48GB Dual Processor Hex Core Dedicated Server"
+		},
+		"productCatalogDetails" : {
+			"href" : "https://offerlink/......",
+			"offeringDescription" : "48GB Dual Processor Hex Core Dedicated Server",
+			"id" : 123
+		}
+	},
+	"lastModified" : {
+		"userId" : "bob",
+		"comment" : "Prod comment",
+		"timestamp" : ISODate("2016-06-28T14:15:43.042Z")
+	},
+	"deviceState" : {
+		"state" : "TEST",
+		"userId" : "testuser",
+		"comment" : "Prod comment",
+		"timestamp" : ISODate("2016-06-28T14:15:43.042Z")
+	},
+	"created" : {
+		"userId" : "bob",
+		"comment" : "Prod comment",
+		"timestamp" : ISODate("2016-06-28T14:15:43.042Z")
+	},
+	"provider" : {
+		"href" : "mercury/device/123123123",
+		"name" : "MERCURY",
+		"id" : 123123123
+	},
+	"inventoryState" : {
+		"quote" : {
+			"opportunity" : "9898989898",
+			"salesPersonUserId" : "jim1234",
+			"id" : "9898989"
+		},
+		"timestamp" : ISODate("2016-06-28T14:15:43.042Z"),
+		"automationEvent" : {
+			"eventId" : "45bd38cb-f401-4873-a7a5-d5afa2fcc0cd"
+		},
+		"account" : {
+			"accountId" : 612345
+		},
+		"state" : "ALLOCATED",
+		"userId" : "automation",
+		"comment" : "TEST",
+		"device" : {
+			"core" : {
+				"href" : "core.rackspace.com/device/12312312312",
+				"id" : "12312312312"
+			},
+			"deviceService" : {
+				"href" : "deviceServiceLink",
+				"id" : "12312312312"
+			}
+		}
+	}
+}

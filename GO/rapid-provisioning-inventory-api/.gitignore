@@ -1,0 +1,19 @@
+# ignore config file 
+rpis.conf
+
+# ignore packages  
+github.com/
+bix.org/
+labix.org/
+
+# ignore idea files
+.idea/
+
+
+# OS generated files 
+.DS_Store
+.DS_Store?
+._*
+
+# Logs and databases 
+*.log

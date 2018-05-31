@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "array",
+  "items": [{
+    "$ref": "#/definitions/validEdgeDevice"
+  }],
+  "definitions": {
+    "validEdgeDevice": {
+      "properties": {
+        "deviceId": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        },
+        "productSku": {
+          "type": "integer"
+        },
+        "offeringId": {
+          "type": "integer"
+        },
+        "datacenterId": {
+          "type": "integer"
+        },
+        "datacenterAbbreviation": {
+          "type": "string"
+        },
+        "aggrZone": {
+          "type": "string"
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+
+}

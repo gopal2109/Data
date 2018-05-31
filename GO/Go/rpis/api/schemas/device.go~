@@ -1,0 +1,27 @@
+package schemas
+
+import (
+	"rpis/api/models"
+	"rpis/api/models/device"
+)
+
+type DeviceState struct {
+	State string `json:"state"`
+	Comment string `json:"comment"`
+}
+
+type DeviceCreate struct {
+	DeviceType string `json:"type"`
+	MacAddress string `json:"macAddress"`
+	Comment string `json:"comment"`
+	Deleted bool `json:"deleted"`
+	Provider device.Provider `json:"provider"`
+	Location device.Location `json:"location"`
+	Product device.Product `json:"product"`
+	DeviceState DeviceState `json:"deviceState"`
+	Created models.ChangeLog `json:"created"`
+	LastModified models.ChangeLog `json:"lastModified"`
+}
+
+func (i *DeviceCreate) Load(d models.Device) {
+}

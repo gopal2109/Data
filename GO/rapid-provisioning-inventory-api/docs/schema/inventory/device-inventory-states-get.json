@@ -1,0 +1,143 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/inventory/device/inventory-states-get.json",
+  "type": "array",
+  "items": [{
+    "$ref": "#/definitions/inventoryState"
+  }],
+  "definitions": {
+    "inventoryState": {
+      "type": "object",
+      "oneOf": [{
+        "$ref": "#/definitions/inventoryStateGeneral"
+      }, {
+        "$ref": "#/definitions/inventoryStateAllocated"
+      }]
+    },
+    "inventoryStateGeneral": {
+      "properties": {
+        "state": {
+          "enum": ["AVAILABLE", "MAINTENANCE", "SUSPENDED", "DECOMMISSIONED", "DELETED"]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "userId",
+        "comment",
+        "automationEvent"
+      ]
+    },
+    "inventoryStateAllocated": {
+      "properties": {
+        "state": {
+          "enum": ["ALLOCATED"]
+        },
+        "userId": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "device": {
+          "$ref": "#/definitions/device"
+        },
+        "account": {
+          "$ref": "#/definitions/account"
+        },
+        "quote": {
+          "$ref": "#/definitions/quote"
+        },
+        "automationEvent": {
+          "$ref": "#/definitions/automationEvent"
+        }
+      },
+      "required": [
+        "state",
+        "userId",
+        "comment",
+        "device",
+        "account"
+      ]
+    },
+    "quote": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "salesPersonUserId": {
+          "type": "string"
+        },
+        "opportunity": {
+          "type": "string"
+        }
+      }
+    },
+    "device": {
+      "properties": {
+        "deviceService": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        },
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "account": {
+      "properties": {
+        "core": {
+          "properties": {
+            "href": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "automationEvent": {
+      "properties": {
+        "href": {
+          "type": "string"
+        },
+        "eventId": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[{
+  "deviceId": 123412,
+  "type": "FIREWALL",
+  "productSku": 1231,
+  "offeringId": 887,
+  "datacenterId": 17,
+  "datacenterAbbreviation": "DFW3",
+  "aggrZone": "GS11",
+  "segments": ["PUBLIC1"]
+}, {
+  "deviceId": 456455,
+  "type": "FIREWALL",
+  "productSku": 54334,
+  "offeringId": 957,
+  "datacenterId": 15,
+  "datacenterAbbreviation": "ORD1",
+  "aggrZone": "AR17",
+  "segments": ["PUBLIC1"]
+}]
